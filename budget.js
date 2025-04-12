@@ -1,7 +1,10 @@
 class Budget {
+static allAccounts = []
+
     constructor(name, many) {
         this.name = name;
         this.many = many;
+        Budget.allAccounts.push(this);
     }
 
     setMany(value) {
@@ -13,14 +16,24 @@ class Budget {
     }
 }
 
-let allAccounts = [];
-
 let card = new Budget('Карта', 0);
 let cash = new Budget('Наличные', 300);
 
-allAccounts.push(card);
-allAccounts.push(cash);
-
-console.log(allAccounts);
+// console.log(Budget.allAccounts[0]);
 
 let accountsConteiner = document.getElementById('accounts');
+
+function showAllAccounts() {
+    for(let i = 0; i < Budget.allAccounts.length; i++) {
+        let accountDiv = document.createElement('div');
+        accountsConteiner.appendChild(accountDiv);
+        let accountName = document.createElement('p');
+        accountDiv.appendChild(accountName);
+        accountName.textContent = Budget.allAccounts[i].name;
+        let accountMany = document.createElement('p');
+        accountDiv.appendChild(accountMany);
+        accountMany.textContent = Budget.allAccounts[i].many;
+    }
+}
+
+showAllAccounts();
