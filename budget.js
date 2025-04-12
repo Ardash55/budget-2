@@ -27,12 +27,15 @@ function showAllAccounts() {
     for(let i = 0; i < Budget.allAccounts.length; i++) {
         let accountDiv = document.createElement('div');
         accountsConteiner.appendChild(accountDiv);
+        accountDiv.className = 'accoutDiv';
         let accountName = document.createElement('p');
         accountDiv.appendChild(accountName);
         accountName.textContent = Budget.allAccounts[i].name;
+        accountName.className = 'accountName';
         let accountMany = document.createElement('p');
         accountDiv.appendChild(accountMany);
         accountMany.textContent = Budget.allAccounts[i].many;
+        accountMany.className = 'accountMany'
     }
 }
 
