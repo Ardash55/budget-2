@@ -1,3 +1,7 @@
+.accounts{
+    margin-bottom: 30px;
+}
+
 .accoutDiv{
     margin-top: 5px;
     margin-bottom: 5px;
@@ -10,6 +14,19 @@
 }
 
 .accountMany{
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.categoryName {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.categoryMany{
     display: inline-block;
     margin-left: 5px;
     margin-top: 5px;

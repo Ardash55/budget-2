@@ -1,4 +1,4 @@
-class Budget {
+class Budget { //класс создания счетов
     static allAccounts = []
 
     constructor(name, many) {
@@ -20,7 +20,7 @@ class Budget {
     }
 }
 
-class Category {
+class Category { //класс создания категорий трат
     static allCategory = [];
 
     constructor(name, many) {
@@ -62,9 +62,28 @@ function showAllAccounts() {
     }
 }
 
+let categoriesContainer = document.getElementById('categories');
+
+function showAllCategories() {
+    for (let i = 0; i < Category.allCategory.length; i++) {
+        let categoryDiv = document.createElement('div');
+        categoriesContainer.appendChild(categoryDiv);
+        categoryDiv.className = 'categoryDiv';
+        let categoryName = document.createElement('p');
+        categoryDiv.appendChild(categoryName);
+        categoryName.textContent = Category.allCategory[i].name;
+        categoryName.className = 'categoryName';
+        let categoryMany = document.createElement('p');
+        categoryDiv.appendChild(categoryMany);
+        categoryMany.textContent = Category.allCategory[i].many;
+        categoryMany.className = 'categoryMany';
+    }
+}
+
 function getMoneyFromBudget(sum, category, budget) {
     category.setMany(sum);
     budget.spendMany(sum);
 }
 
 showAllAccounts();
+showAllCategories();
